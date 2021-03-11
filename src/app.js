@@ -4,6 +4,7 @@ const hbs = require('hbs');
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 const request = require("postman-request")
+const port = process.env.PORT || 3000
 const app = express()
 // define paths for express config
 const public = path.join(__dirname,'../public')
@@ -95,6 +96,6 @@ app.get('/help/*',(req,res) => {
      })
  })
 
-app.listen(3000, ()=> {
-    console.log("server is running successfully on port 3000 ");
+app.listen(port, ()=> {
+    console.log("server is running successfully on port" + port)
 })
